@@ -7,15 +7,16 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          UWaterloo Mechatronics Capstone Project
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p
+          className="App-paragraph"
         >
-          Learn React
+          Aryan Kalia | Dhruv Upadhyay | Mohamed Goha | Saksham Ahuja
+        </p>
+        <a className="App-paragraph App-link"
+            href="https://ring-diascia-8a8.notion.site/e9f5e88d51244b42928055a13674efc1?v=6aae393196134838bbc31bf9d476bda8&pvs=4">
+            See log book
         </a>
       </header>
     </div>
