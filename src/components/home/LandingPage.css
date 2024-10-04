@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+.landing-video {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align video properly */
+  width: 100%;
+  height: 100vh; /* Ensure the video takes full height of the viewport */
+  overflow: hidden; /* Hide overflow to prevent white edges during blur */
+  position: fixed;
+}
+
+.landing-video video {
+  /* Make sure the video covers the container fully */
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Ensure the video fills the container without stretching */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Optional: add a subtle overlay if desired */
+  z-index: 1; /* Place the overlay in front of the video */
+  transition: filter 1s ease; /* Smooth transition for blur */
+  pointer-events: none; /* Ensure it doesn’t interfere with video controls */
+  animation: blurVideo 1s forwards;
+  animation-delay: 5s;
+}
+
+
+@keyframes blurVideo {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* Title text styling remains the same */
+.title-text {
+  position: absolute;
+  font-family: Aleo;
+  font-weight: 300;
+  top: 40vh;
+  left: 5vh;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 6s;
+  font-size: 2.5rem;
+  color: white;
+  z-index: 2;
+}
+
+.title-text h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.title-text p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+/* Fade-in animation for the text */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+.morphing-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none; /* So it doesn't block other content */
+  z-index: 3;
+}
+
+.wave {
+  position: relative;
+  top: 0vh;
+  height: 100vh;
+  overflow: hidden;
+  animation: flyIn 2s forwards;
+  animation-delay: 5s;
+  transform: translate(0, 20vh);
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translate(0, 20vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.triangle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-top: 0 solid transparent;
+  border-bottom: calc(var(--scroll, 0.1) * 100vh) solid rgba(30, 30, 30, 0.9);
+  transform-origin: bottom left;
+  transition: border-bottom 0.3s ease-in-out, border-left 0.3s ease-in-out;
+  z-index: 4;
+}
+.triangle-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-top: 0 solid transparent;
+  border-bottom: calc(var(--scroll, 0.2) * 100vh) solid rgba(108, 108, 108, 0.5);
+  transform-origin: bottom left;
+  transition: border-bottom 0.3s ease-in-out, border-left 0.3s ease-in-out;
+  z-index: 3;
+}
+
