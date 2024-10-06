@@ -172,15 +172,19 @@ function LandingPage() {
   
     return (
         <div style={{backgroundColor:"#1e1e1e"}}>
-            <Parallax pages={1.55} style={{backgroundColor: "#1e1e1e"}}>
+            <Parallax pages={1.60} style={{backgroundColor: "#1e1e1e"}}>
                 <ParallaxLayer speed={0.5}>
                     <div className="landing-video">
                         <video
                             src={bkgVideo}
-                            autoPlay
-                            muted
+                            autoPlay={true}
+                            muted={true}
                             ref={videoRef}
                             onEnded={handleVideoEnd}
+                            controls = ''
+                            preload='auto'
+                            playsInline={true}
+                            onLoad={e => e.target.play()}
                         />
                     </div>
                     <div className="title-text">
