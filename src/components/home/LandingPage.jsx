@@ -1,49 +1,38 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./LandingPage.css"
-import bkgVideo from  "../../assets/BreatheCastVideo.mp4";
+import bkgVideo from  "../../assets/BreatheCastVideo_Crop.mp4";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import TeamPage from './TeamPage';
 
 const OscillatingWave = () => {
     const [waveOffset, setWaveOffset] = useState(0);
 
-    const [scrollPosition, setScrollPosition] = useState(0);
-
-    const handleScroll = () => {
-        const position = window.scrollY;
-        console.log(position);
-        setScrollPosition(position);
-    };
-
-    useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
 
     useEffect(() => {
       const interval = setInterval(() => {
-        setWaveOffset((prevOffset) => (prevOffset + 0.02) % (2 * Math.PI)); // Update wave offset over time
-      }, 50); // Update interval for smooth animation
+        setWaveOffset((prevOffset) => (prevOffset + 0.02) % (2 * Math.PI));
+      }, 50);
   
-      return () => clearInterval(interval); // Cleanup interval on component unmount
+      return () => clearInterval(interval);
     }, []);
   
-    const windowHeight = window.innerHeight;
-    const waveWidth = window.innerWidth;
     const wavePath = () => {
-        const waveMaxHeight = windowHeight*0.15 - 1.1*scrollPosition;
-        const amplitude = windowHeight * 0.075 + scrollPosition*0.05;
-        const waveBase = windowHeight - 1.1*scrollPosition;
-        const frequency = 100;
-        const offset = waveOffset; // Offset to create the oscillating effect
-        const midpoint = waveBase - waveMaxHeight/2;
+        const waveBase = windowHeight;
+
+        const waveMaxHeight = windowHeight*0.05;
+        const amplitude = windowHeight * 0.05;
+        const midpoint = waveMaxHeight + amplitude/2;
+        const offset = waveOffset;
     
-        // Create a path from a set of control points for a smooth wave curve
         const path = `
-            M 0,${midpoint + amplitude * Math.sin(frequency + offset)} 
-            Q ${waveWidth/4},${midpoint + amplitude * Math.sin(frequency + offset)} 
-            ${waveWidth/2},${midpoint}
-            T ${waveWidth},${midpoint - amplitude * Math.sin(frequency * 2 + offset)} 
-            L ${waveWidth},${windowHeight}
-            L 0,${windowHeight}
+            M 0,${midpoint + amplitude * Math.sin(offset)} 
+            Q ${windowWidth/4},${midpoint + amplitude * Math.sin(offset)} 
+              ${windowWidth/2},${midpoint}
+            T ${windowWidth},${midpoint - amplitude * Math.sin(offset)} 
+            L ${windowWidth},${waveBase}
+            L 0,${waveBase}
             Z
         `;
         return path;
@@ -52,7 +41,7 @@ const OscillatingWave = () => {
     return (
         <div className="wave">
             <svg
-                viewBox={"0 0 " + {waveWidth} + " " + {windowHeight}}
+                viewBox={"0 0 " + {windowWidth} + " " + {windowHeight}}
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,31 +57,149 @@ const OscillatingWave = () => {
         </div>
     );
 };
-  
+
+
+
+function AnimatedText(props) {
+    const [castDescIdx, setCastDescIdx] = useState(0);
+    const [animClass, setAnimClass] = useState('fade-in'); // Animation class
+    const [isVisible, setIsVisible] = useState(false); // Track if the component is in view
+    const ref = useRef(null); // Reference to the component
+
+    const castDescs = ["unhygienic", "uncomfortable", "inconvenient", "outdated."];
+
+    // Use Intersection Observer to detect when the component is in view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                } else {
+                    setIsVisible(false);
+                }
+            },
+            { threshold: 0.1 } // Trigger when 10% of the component is in view
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible) return; // Don't run the interval if not visible
+
+        const interval = setInterval(() => {
+            if (castDescIdx >= castDescs.length - 1) {
+                clearInterval(interval); // Stop the interval if we've reached the last description
+                return;
+            }
+
+            setAnimClass('fade-out'); // Start fade-out animation
+            setTimeout(() => {
+                setCastDescIdx((prevIdx) => {
+                    const newIdx = Math.min(prevIdx + 1, castDescs.length - 1); // Cycle through descriptions
+                    if (newIdx === castDescs.length - 1) {
+                        props.setShowFullPage(true);
+                    }
+                    return newIdx;
+                });
+                setAnimClass('fade-in'); // Start fade-in animation
+            }, 500); // Duration of fade-out
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [isVisible, castDescIdx]);
+
+    return (
+        <div ref={ref} className="combined-text">
+            <h1>Traditional medical casts are <span className={`cast-description ${animClass}`}>{castDescs[castDescIdx]}</span></h1>
+        {props.showFullPage && (
+            <p className='extra-text fade-in'>
+                We're working on a way to make them more tolerable.
+            </p>
+        )}
+        </div>
+    );
+}
 
 function LandingPage() {
     const videoRef = useRef(null);
 
+
+    const [videoFinished, setVideoFinished] = useState(false);
+    const handleVideoEnd = () => {
+        setVideoFinished(true);
+    };
+
+    // Function to prevent scrolling
+    const preventScroll = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    };
+
+    useEffect(() => {
+        if (!videoFinished) {
+            // Disable all scrolling
+            window.addEventListener('wheel', preventScroll, { passive: false });
+            window.addEventListener('touchmove', preventScroll, { passive: false });
+            window.addEventListener('keydown', (e) => {
+                if ([32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
+                    preventScroll(e); // Prevent spacebar and arrow key scrolling
+                }
+            });
+        } else {
+            // Re-enable scrolling when the video finishes
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+        }
+
+        // Cleanup function to remove listeners
+        return () => {
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+        };
+    }, [videoFinished]);
+
+    const [showFullPage, setShowFullPage] = useState(false); // State to manage visibility of the extra text
+  
     return (
-        <div style={{height: '300vh'}}>
-            <div className="landing-video">
-                <video
-                    src={bkgVideo}
-                    autoPlay
-                    muted
-                    ref={videoRef}
-                    onTimeUpdate={handleTimeUpdate}
-                />
-            </div>
-            <div className="title-text">
-                <h1>Gradient</h1>
-                <p>Fitting casts around your life, not the other way around.</p>
-            </div>
-            <div className="morphing-container">
-                {/* <div className="triangle"></div>
-                <div className="triangle-2"></div> */}
-                <OscillatingWave />
-            </div>
+        <div style={{backgroundColor:"#1e1e1e"}}>
+            <Parallax pages={1.55} style={{backgroundColor: "#1e1e1e"}}>
+                <ParallaxLayer speed={0.5}>
+                    <div className="landing-video">
+                        <video
+                            src={bkgVideo}
+                            autoPlay
+                            muted
+                            ref={videoRef}
+                            onEnded={handleVideoEnd}
+                        />
+                    </div>
+                    <div className="title-text">
+                        <h1>Gradient</h1>
+                        <p>Fitting casts around your life, not the other way around.</p>
+                    </div>
+                </ParallaxLayer>
+                <ParallaxLayer offset={0.85} speed={1}>
+                    <div className="morphing-container">
+                        <OscillatingWave />
+                    </div>
+                </ParallaxLayer>
+                <ParallaxLayer offset={0.999} speed={1}>
+                    <div className="morphing-container" style={{marginTop:'30px'}}>
+                        <AnimatedText showFullPage={showFullPage} setShowFullPage={setShowFullPage} />
+                        {showFullPage && <TeamPage />}
+                    </div>
+                </ParallaxLayer>
+            </Parallax>
         </div>
     );
 };
