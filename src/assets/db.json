@@ -1,14 +1,12 @@
 {
     "posts": [
         {
-            "id": "test",
-            "title": "This is a test post",
-            "date": "May-August 2023",
-            "body": "Lorem ipsum dolor sit amet...",
+            "id": "1",
+            "title": "Feedback 1x1",
+            "date": "2025-01-07",
+            "body": "Feedback control works! To kick off the term, we set up a mount for the 1x1 piston and placed an Intel Realsense Depth Camera over top. We were able to successfully measure changes in height to a mm-level and use that to control our pump to actuate the pin. Now just 400 more to go! The piston was a little bit jittery, but this was because of oversized o-rings.",
             "media": {
-                "images": {
-                    "nxpLogo": "logo.png"
-                }
+                "video": "https://youtube.com/embed/NFVOpqu-yl4"
             }
         }
     ],
