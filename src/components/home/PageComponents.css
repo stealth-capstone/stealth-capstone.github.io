@@ -1,0 +1,57 @@
+.wave {
+  padding: 0 !important;
+  width: 100%;
+  height: fit-content;
+}  
+
+.morphing-container {
+  font-weight: 400;
+  font-size: 1.8rem;
+  padding: 7vw 7vw 0 7vw;
+}
+
+.cast-description {
+  font-weight: 600;
+  overflow-wrap: break-word;
+  display: inline-block;
+}
+
+.generic-container {
+  background-color: #1e1e1e;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.team-card {
+  border-radius: 30px !important;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.team-card-image {
+  border-radius: 100%;
+  width: 50%;
+}
+
+.linkedin-icon {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
+.mailing-list-container {
+  text-align: center;
+  margin: 20px;
+  padding: 30px;
+  display: block;
+}
+
+.email-input {
+  width: 10px;
+}

@@ -1,33 +1,29 @@
 import "./App.css"
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import NavbarComponent from "./components/sitewide/Navbar";
+import FooterComponent from "./components/sitewide/Footer";
+import NotFoundPage from "./components/sitewide/NotFoundPage";
 import CoursePage from "./components/course/CoursePage";
-import Navbar from "./components/navbar/Navbar";
 import LandingPage from "./components/home/LandingPage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <CoursePage />
-  },
-  {
-    path: "/landing",
-    element: <LandingPage />
-  }
-]);
+import OrderPage from "./components/order/OrderPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <>
-      {/* <Navbar /> */}
+    <BrowserRouter>
+      <NavbarComponent />
       <div className="App">
-        <RouterProvider router={router} />        
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/capstone" element={<CoursePage />} />
+          <Route path="/order" element={<OrderPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </div>
-    </>
+      <FooterComponent />
+    </BrowserRouter>
   );
 }
 

@@ -1,5 +1,7 @@
 import {React, useState} from 'react';
-import './LandingPage.css';
+import { Container, Form } from 'react-bootstrap';
+
+import './PageComponents.css';
 
 function MailingList() {
     const [email, setEmail] = useState('');
@@ -17,27 +19,28 @@ function MailingList() {
     };
 
     return (
-        <div className="mailing-list-container">
+        <Container className="fade-in generic-container mailing-list-container">
             <h2>Join Our Mailing List</h2>
             {submitted ? (
                 <p>Thank you for subscribing!</p>
             ) : (
-                <form onSubmit={handleSubmit} className="mailing-list-form">
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={handleInputChange}
-                        placeholder="Enter your email"
-                        required
-                        className="email-input"
-                    />
-                    <button type="submit" className="submit-button">
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group controlId="formBasicEmail" className="d-inline-block">
+                        <Form.Control
+                            type="email"
+                            value={email}
+                            onChange={handleInputChange}
+                            placeholder="Enter your email"
+                            required
+                            className="email-input"
+                        />
+                    </Form.Group>
+                    <button type="submit" className="generic-btn mx-3">
                         Subscribe
                     </button>
-                </form>
+                </Form>
             )}
-        </div>
-
+        </Container>
     )
 }
 

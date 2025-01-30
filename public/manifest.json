@@ -1,9 +1,9 @@
 {
-  "short_name": "Stealth Capstone",
-  "name": "Stealth Capstone",
+  "short_name": "Gradient by Morph",
+  "name": "Gradient by Morph",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "favicon.png",
       "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

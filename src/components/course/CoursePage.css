@@ -1,28 +1,53 @@
 .course-page {
-  text-align: center;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
 }
 
-.course-logo {
-  height: 40vmin;
-  pointer-events: none;
+.course-page-divider {
+  width: 90%;
+  height: 2px;
+  background-color: rgb(240, 240, 240);
+  margin: 30px 0;
 }
 
-.course-page-header {
-  background-color: #1e1e1e;
-  min-height: 100vh;
+.post-container {
+  width: 90%;
+  background-color: rgb(240, 240, 240);
+  color: black;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 50px;
 }
-  
+
+.posts-divider {
+  width: 70%;
+  height: 2px;
+  background-color: #868686;
+  margin: 30px 0;
+}
+
+.small-divider {
+  width: 20%;
+  height: 2px;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: calc(20px + 3rem);
+  margin: 20px;
+  font-weight: bold;
+}
+
+.page-subtitle {
+  font-size: calc(10px + 0.8rem);
+  color: rgb(240, 240, 240);
+  margin-bottom: 20px;
+}
+
 .course-paragraph {
   font-size: calc(10px + 1vmin);
-}
-  
-.course-link {
-  color: #61dafb;
 }

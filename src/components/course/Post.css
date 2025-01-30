@@ -1,0 +1,14 @@
+.post-title {
+    font-size: calc(10px + 2rem);
+    font-weight: bold;
+}
+
+.post-subtitle {
+    font-size: calc(10px + 0.8rem);
+    color: #1e1e1e;
+    margin-bottom: 20px;
+}
+
+.post-text {
+    font-size: calc(10px + 1vmin);
+}

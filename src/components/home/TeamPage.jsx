@@ -1,5 +1,7 @@
 import React from 'react';
-import './LandingPage.css';
+import { Card, Container, Row, Col } from 'react-bootstrap';
+
+import './PageComponents.css';
 
 import aryanHeadshot from '../../assets/headshots/aryan.jpeg';
 import dhruvHeadshot from '../../assets/headshots/dhruv.jpeg';
@@ -36,28 +38,32 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member }) => (
-    <div className="team-card">
-        <img src={member.image} alt={`${member.name}'s headshot`} className="team-image" />
-        <h3>{member.name}</h3>
-        <p>{member.description}</p>
-        <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" className="linkedin-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" className="linkedin-icon" />
-        </a>
-    </div>
+    <Card bg="dark" text="light" className="team-card">
+        <img src={member.image} alt={`${member.name}'s headshot`} className="team-card-image" />
+        <Card.Body className="team-card-body">
+            <Card.Title>
+                {member.name}
+            </Card.Title>
+            <Card.Text>
+                {member.description}
+            </Card.Text>
+            <a href={member.linkedIn} target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" className="linkedin-icon" />
+            </a>
+        </Card.Body>
+    </Card>
 );
 
-
 const TeamPage = () => (
-    <>
-    <div className="team-container fade-in mailing-list-container">
-        <div className="card-container">
-            {teamMembers.map((member, index) => (
-                <TeamCard key={index} member={member} />
-            ))}
-        </div>
-    </div>
-    <MailingList />
-    </>
+    <Container className="fade-in generic-container">
+        <Row style={{ padding: "0 10px" }}>
+        {teamMembers.map((member, index) => (
+            <Col xs={12} md={3} key={index}>
+                    <TeamCard  key={index} member={member} />
+            </Col>
+        ))}
+        </Row>
+    </Container>
 );
 
 export default TeamPage;

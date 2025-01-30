@@ -1,0 +1,15 @@
+{
+    "posts": [
+        {
+            "id": "test",
+            "title": "This is a test post",
+            "date": "May-August 2023",
+            "body": "Lorem ipsum dolor sit amet...",
+            "media": {
+                "images": {
+                    "nxpLogo": "logo.png"
+                }
+            }
+        }
+    ]
+}

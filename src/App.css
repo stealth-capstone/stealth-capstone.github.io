@@ -5,7 +5,6 @@ a:hover {
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
-  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,4 +22,55 @@ a:hover {
   -o-transition: all .2s ease-in;
   -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
+}
+
+.full-site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  /* font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif; */
+  font-family: Aleo;
+  min-height: 100vh;
+  color: white;
+  background-image: radial-gradient(circle at bottom, #d9a9e8, #9bbce9, #637cce);
+  margin: 0;
+  padding: 0;
+}
+
+.App a {
+  text-decoration: none;
+  color: #61dafb
+}
+
+.generic-page {
+  height: 100vh;
+  display: flexbox;
+  justify-content: center;
+  text-align: center;
+}
+
+.generic-btn {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.generic-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.generic-btn:hover {
+  background-color: #2e2e2e;
 }
