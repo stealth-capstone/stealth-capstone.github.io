@@ -1,6 +1,8 @@
 import {React, useState} from 'react';
 import { Container, Form } from 'react-bootstrap';
 
+import { getDatabase, ref, child, push } from "firebase/database";
+
 import './PageComponents.css';
 
 function MailingList() {
@@ -15,6 +17,13 @@ function MailingList() {
         e.preventDefault();
         // Here you can add the logic to send the email to your server or API
         setSubmitted(true);
+        const db = getDatabase();
+        const mailingListRef = ref(db, 'mailing_list');
+        push(mailingListRef, {
+            email: email,
+            timestamp: new Date().toISOString()
+        });
+
         setEmail(''); // Clear the input field after submission
     };
 
