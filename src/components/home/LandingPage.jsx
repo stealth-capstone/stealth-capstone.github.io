@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLocation } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

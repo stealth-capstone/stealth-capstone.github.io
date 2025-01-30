@@ -1,7 +1,7 @@
 import {React, useState} from 'react';
 import { Container, Form } from 'react-bootstrap';
 
-import { getDatabase, ref, child, push } from "firebase/database";
+import { getDatabase, ref, push } from "firebase/database";
 
 import './PageComponents.css';
 

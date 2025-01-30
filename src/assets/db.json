@@ -1,0 +1,29 @@
+{
+    "posts": [
+        {
+            "id": "test",
+            "title": "This is a test post",
+            "date": "May-August 2023",
+            "body": "Lorem ipsum dolor sit amet...",
+            "media": {
+                "images": {
+                    "nxpLogo": "logo.png"
+                }
+            }
+        }
+    ],
+    "mailing_list": [
+        {
+            "email": "test@gmail.com",
+            "timestamp": "2023-05-01T00:00:00.000Z"
+        }
+    ],
+    "orders": [
+        {
+            "name": "John Doe",
+            "email": "johndoe@gmail.com",
+            "phone": "123-456-7890",
+            "message": "This is a test message"
+        }
+    ]
+}

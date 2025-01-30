@@ -47,7 +47,7 @@ function CoursePage() {
             Under Canada's already-strained medical system, dealing with complications from casts can be frustrating for both the recovering user and the healthcare provider.
           </p>
           <p>
-            Using dynamic thermoforming technology, we're building a cast that's breathable, washable, and even removeable.
+            Using dynamic thermoforming technology, we're building a cast that's breathable, washable, and even removable.
           </p>
         </Col>
         <Col sm={12} lg={6} className="p-3">
