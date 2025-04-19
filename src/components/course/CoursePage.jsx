@@ -55,20 +55,21 @@ function CoursePage() {
           <div className="small-divider"></div>
           <p>This is a blog for the MTE 482 course that shows the progress our group has made over the past few months in building Gradient.</p>
           <strong><p>This site is intended for capstone professors only. Please do not distribute as it may contain sensitive IP.</p></strong>
-          <p>Looking for our <a style={{color: "rgb(28, 119, 255)"}} href="https://ring-diascia-8a8.notion.site/e9f5e88d51244b42928055a13674efc1?v=6aae393196134838bbc31bf9d476bda8&pvs=4">log book</a>?</p>
+          <p>Looking for our <a style={{color: "rgb(0, 217, 255)"}} href="https://ring-diascia-8a8.notion.site/e9f5e88d51244b42928055a13674efc1?v=6aae393196134838bbc31bf9d476bda8&pvs=4">log book</a>?</p>
         </Col>
       </Row>
 
       <div className="course-page-divider"></div>
 
       {posts && posts.map((post, index) => {
-        console.log("HERE IS THE POST:");
-        console.log(post);
         return (
-          <div className="post-container" key={index}>
-          <Post content={post} index={index} />
-          {/* {index+1 != posts.length-1 && <div className="posts-divider" ></div>} */}
-          </div>
+          <>
+            <div className="post-container" key={index}>
+            <Post content={post} index={index} />
+            {/* {index+1 != posts.length-1 && <div className="posts-divider" ></div>} */}
+            </div>
+            <br/>
+          </>
         )
       })}
 

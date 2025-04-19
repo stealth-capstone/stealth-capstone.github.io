@@ -1,6 +1,305 @@
 {
     "posts": [
         {
+            "id": "27",
+            "title": "Overview",
+            "date": "2025-03-27",
+            "body": "We're quite proud of having closed out our capstone with a proof-of-concept of our multiple-row actuation, as well as full feedback on a single row of 20 pins. Check out this cool video displaying our journey and these achievements!",
+            "media": {
+                "video": "https://www.youtube.com/embed/dvgP4-65akQ"
+            }
+        },
+        {
+            "id": "26",
+            "title": "Norman Esch Finals",
+            "date": "2025-03-27",
+            "body": "We're absolutely hoonoured to have been awarded at top prize of $12 000 at the Norman Esch Finals today. This funding will be invaluable due to our large budget, and we hope to also put it towards filing a patent this year as we continue to build.",
+            "media": {
+                "images": {
+                    "norman_esch_award": "norman_esch_award.png",
+                    "norman_esch_2": "norman_esch_2.png"
+                }
+            }
+        },
+        {
+            "id": "25",
+            "title": "Symposium",
+            "date": "2025-03-21",
+            "body": "It's been an incredibly exciting journey building Gradient, and today was a successful symposium where we were able to show off our prototype's polished design, and single-row actutation. Some leakage problems with the clutches have prevented us from being able to display full actuation, but we aim to continue working on this as we lead up to the Norman Esch Finals next week.",
+            "media": {
+                "images": {
+                    "symposium": "symposium.jpg",
+                    "symposium_2": "symposium_2.jpg"
+                }
+            }
+        },
+        {
+            "id": "25",
+            "title": "PDIO Assembled",
+            "date": "2025-03-14",
+            "body": "Here's a look at our first fully-assembled PDIO board. This has all the IO we need to be able to control all the clutches, and will make it much more manage and route the wires for 20 pumps.",
+            "media": {
+                "images": {
+                    "first_pdio_assembled": "first_pdio_assembled.jpg"
+                }
+            }
+        },
+        {
+            "id": "24",
+            "title": "Prof Demo",
+            "date": "2025-03-13",
+            "body": "Here's a look at what we showed for the professor demo meeting on March 13th: a row of pins rising up, and then rising up and down in an alternating manner. Excited to integrate camera feedback and work towards multiple rows.",
+            "media": {
+                "video": "https://www.youtube.com/embed/nfgjGsvi9pg"
+            }
+        },
+        {
+            "id": "23",
+            "title": "Full Assembly",
+            "date": "2025-03-13",
+            "body": "It's all put together! Other than the cosmetic side panels, we've finished putting all the pieces of our assembly onto the platform after a late night session. We've only been able to get a single row functional unfortunately, as a result of some problems with clutches, and haven't had a chance to validate camera feedback. We'll continue working on this as we progress towards symposium.",
+            "media": {
+                "images": {
+                    "full_assembly": "full_assembly.jpg"
+                }
+            }
+        },
+        {
+            "id": "22",
+            "title": "Electronics Testing",
+            "date": "2025-03-12",
+            "body": "As we finish putting together our mechanical assembly, we've started working on the electrical and firmware bringup. For now, we're going to be using 4 of the breakout boards to operate the pins rather than using the PDIO board, as the parts haven't come in yet.",
+            "media": {
+                "images": {
+                    "electronics_testing": "electronics_testing.jpg"
+                }
+            }
+        },
+        {
+            "id": "21",
+            "title": "Piston Block Ready",
+            "date": "2025-03-12",
+            "body": "Four days ago, we finished putting together the rest of the 10x10 pin blocks in a 6 hour late-night sprint. We've finally had a chance to put these all toghether to build the full 20x20 piston block. All the pieces are ready, now for the final assembly!",
+            "media": {
+                "images": {
+                    "piston_block_assembled": "piston_block_assembled.jpg"
+                }
+            }
+        },
+        {
+            "id": "20",
+            "title": "Clutches Ready",
+            "date": "2025-03-11",
+            "body": "We just completed the assembly of 20 clutches that will be used to enable/disable actuation of particular rows, and individually tested each to see that they are able to block the flow of fluid.",
+            "media": {
+                "images": {
+                    "clutches_assembled": "clutches_assembled.jpg"
+                }
+            }
+        },
+        {
+            "id": "19",
+            "title": "Frame Complete",
+            "date": "2025-03-11",
+            "body": "The frame for holding the assembly was finally assembled today. This will contain 4 levels of components: one at the bottom for electronics, another for pumps, one for clutches, and a top section for holding the piston assembly. The sides will soon be covered with painted MDF to give the product a finished look.",
+            "media": {
+                "images": {
+                    "frame_assembled": "frame_assembled.jpg"
+                }
+            }
+        },
+        {
+            "id": "18",
+            "title": "First 10x10 Complete",
+            "date": "2025-03-04",
+            "body": "The first 10x10 out of 4 has been fully assembled! This proved quite difficult, and ended up requiring us to glue the pistons to a temporary 3D-printed block to prevent them from popping out when installing the springs. Only 3 more to go.",
+            "media": {
+                "images": {
+                    "aryan_10x10": "aryan_10x10.jpg"
+                }
+            }
+        },
+        {
+            "id": "17",
+            "title": "Pistons Complete",
+            "date": "2025-03-04",
+            "body": "Getting to the finish line! We just put together the assembly for 400 pistons. All that's left to do is to form these into a grid and add springs.",
+            "media": {
+                "images": {
+                    "pistons_complete": "pistons_complete.jpg"
+                }
+            }
+        },
+        {
+            "id": "16",
+            "title": "Heat Sets and Fluid Ports",
+            "date": "2025-03-01",
+            "body": "As we continue our non-stop assembly work, here's a look at hundreds of heat set inserts we placed into parts for the clutch assemblies, and hundreds of fluid ports we've assembled by adding teflon tape and screwing the tube-connected pieces to the piston connected ones. These images show over 20 hours of cumulative work.",
+            "media": {
+                "images": {
+                    "heat_sets_1": "heat_sets_1.jpg",
+                    "heat_sets_2": "heat_sets_2.jpg",
+                    "fluid_ports": "fluid_ports.jpg"
+                }
+            }
+        },
+        {
+            "id": "15",
+            "title": "Glued Rods",
+            "date": "2025-02-27",
+            "body": "We've been incredibly busy over the reading week doing many things - cutting the aluminum rods and polycarbonate tubes for the 20x20 down to shape, filing them, facing them, and more. With all the rods cut, we've finally been able to glue them to the shuttles. Here's a look at 200 of the 400.",
+            "media": {
+                "images": {
+                    "glued_rods_1": "glued_rods_1.jpg",
+                    "glued_rods_2": "glued_rods_2.jpg"
+                }
+            }
+        },
+        {
+            "id": "14",
+            "title": "New CAD",
+            "date": "2025-02-26",
+            "body": "We've revamped our CAD design and made the whole assembly much smaller, and layed out manifolds and clutches in such a way that we minimize the mess of tubing that will arise when we finally route the lines to the pins.",
+            "media": {
+                "images": {
+                    "new_cad": "new_cad.png"
+                }
+            }
+        },
+        {
+            "id": "13",
+            "title": "Boards Designed",
+            "date": "2025-02-24",
+            "body": "We're nearing the completion of our PDIO board design! We plan to order this in the next few days along with an 'expander board' that we're using to enable better cable management. These boards will convert a 10-pin ribbon cable to a set of 2-pin cables that can be routed out to individual clutches and pumps.",
+            "media": {
+                "images": {
+                    "pdio_board": "pdio_board.png",
+                    "expander_board": "expander_board.png"
+                }
+            }
+        },
+        {
+            "id": "12",
+            "title": "Manifolds",
+            "date": "2025-02-19",
+            "body": "Today, we received fluid manifolds that can be used for the columns of our hydraulic matrix. These will be tested in the next few days to ensure there are no leakages before integrating with the 5x5.",
+            "media": {
+                "images": {
+                    "manifolds": "manifolds.jpg"
+                }
+            }
+        },
+        {
+            "id": "11",
+            "title": "Camera Issues",
+            "date": "2025-02-11",
+            "body": "Earlier this week, we received a depth camera - the Orbbec Gemini 215 - which is much more powerful than the Intel RealSense one we had been using earlier. Unfortunately, we found that this camera uses active IR-based stereo sensing, which makes it incredibly difficult to pick up aluminum and steel in an image. The images here show what the camera sees in both IR and 'depth' - notice the blackouts around the actual pins. We're investigating fixes and a potential replacement.",
+            "media": {
+                "images": {
+                    "pins_in_ir": "pins_in_ir.png",
+                    "pins_in_depth": "pins_in_depth.png"
+                }
+            }
+        },
+        {
+            "id": "10",
+            "title": "New Clutch",
+            "date": "2025-02-11",
+            "body": "Our new clutch design has been actively brewing in the background. Here's a look at a complete singular clutch, able to control 20 lines at once with a lead screw!",
+            "media": {
+                "images": {
+                    "new_clutch": "new_clutch.jpg"
+                }
+            }
+        },
+        {
+            "id": "9",
+            "title": "New tubing and springs",
+            "date": "2025-02-10",
+            "body": "We got some new springs and tubes, and finally had a chance to test them out with our pistons. This video shows completely automated extension and retraction as it will look on every single piston in the 5x5 and 20x20.",
+            "media": {
+                "video": "https://youtube.com/embed/gg_PP_G-vdM?si=-pW_Xhwk7LJ4OY51"
+            }
+        },
+        {
+            "id": "8",
+            "title": "5x5 Assembled",
+            "date": "2025-01-27",
+            "body": "Despite some setbacks with respect to the clutch tubing and the springs, we got the chance to finally put some of the 5x5 piston assembly together today! We have yet to add the rods and piston shuttles as we await new springs.",
+            "media": {
+                "images": {
+                    "5x5_pistons_bottom": "5x5_pistons_bottom.jpg",
+                    "5x5_pistons_side": "5x5_pistons_side.jpg"
+                }
+            }
+        },
+        {
+            "id": "7",
+            "title": "Tube Testing v1",
+            "date": "2025-01-27",
+            "body": "After some changes to our clutch design to move towards a 'pinch' mechanism, we decided to test out some flexible tubing we bought to see how it would hold up when using the peristaltic pumps to control fluid (as well as the 3D-printed piston components). Unfortunately, the tubing seemed to collapse when attemping to pull water unless a large enough force was applied to push the piston back down - a force too large for the peristaltic pumps to move it back up. We need to investigate new tubing and springs for our pistons.",
+            "media": {
+                "images": {
+                    "tube_testing_v1": "tube_testing_v1.jpg"
+                }
+            }
+        },
+        {
+            "id": "6",
+            "title": "3D Printed Parts In",
+            "date": "2025-01-25",
+            "body": "After a short wait, we've finally received over 800 SLA-printed components for our piston assemblies. 5x5 piston assembly coming soon!",
+            "media": {
+                "images": {
+                    "piston_shuttle": "piston_shuttle.jpg",
+                    "piston_shuttle_closeup": "piston_shuttle_closeup.jpg"    
+                }
+            }
+        },
+        {
+            "id": "5",
+            "title": "Motors moving",
+            "date": "2025-01-22",
+            "body": "Success! Our firmware is able to successfully control the motors. There's still a few issues to iron out with respect to controlling motors several motors independently, but we should be looking good for controlling our 5x5 assembly soon.",
+            "media": {
+                "video": "https://youtube.com/embed/VX5oCaX4CPQ"
+            }
+        },
+        {
+            "id": "4",
+            "title": "Breakout Boards",
+            "date": "2025-01-17",
+            "body": "Our first breakout boards for our motor controller are assembled and ready to test. In the coming weeks, we'll be evaluating our firmware to make sure our drivers can spin both clutch and pump motors.",
+            "media": {
+                "images": {
+                    "breakout_boards": "breakout_boards.jpg"
+                }
+            }
+        },
+        {
+            "id": "3",
+            "title": "Early Manufacturing",
+            "date": "2025-01-16",
+            "body": "Last week, we completed our first major order of the year - we received 282ft of aluminum rods, 288ft of polycarbonate tubing, 54ft of spring, 1800 o-rings, hundreds of tube fittings, and more. We're geared up to start building our 5x5 prototype! Here are some first looks at the results of 8+ hours in the Engineering Student Machine Shop. Exciting things to come!",
+            "media": {
+                "images": {
+                    "piston_housings": "piston_housings.jpg",
+                    "piston_rods_cut": "piston_rods_cut.jpg"
+                }
+            }
+        },
+        {
+            "id": "2",
+            "title": "RPi Working",
+            "date": "2025-01-12",
+            "body": "After a successful preliminary test of our software, we've also successfully deployed it to a remotely-controllable Raspberry Pi 5, proving that it can handle the CV workload.",
+            "media": {
+                "images": {
+                    "raspberry_pi": "raspberry_pi.png"
+                }
+            }
+        },
+        {
             "id": "1",
             "title": "Feedback 1x1",
             "date": "2025-01-07",
